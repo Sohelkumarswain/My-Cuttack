@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahanadi - The Great River of Odisha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f2d9d9 0%, #ffffff 50%, #f2d9d9 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(rgba(242, 217, 217, 0.9), rgba(255, 255, 255, 0.9));
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 0 50px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #f2d9d9, #e6c7c7);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(242, 217, 217, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #e6c7c7, #dab8b8);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(242, 217, 217, 0.6);
+            border-color: #d4a8a8;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            color: #b85555;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .hero-title:hover {
+            color: #c96666;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+            transition: color 0.3s ease;
+        }
+
+        .hero-subtitle:hover {
+            color: #b85555;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #f2d9d9;
+        }
+
+        .content-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            border-left-color: #e6c7c7;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #b85555;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #c96666;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #f2d9d9, #e6c7c7);
+            margin: 15px auto;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 150px;
+        }
+
+        .section-content {
+            font-size: 1.2em;
+            text-align: justify;
+            color: #555;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .section-content:hover {
+            color: #333;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #f2d9d9, #f7e5e5);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #e6c7c7;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            background: linear-gradient(135deg, #e6c7c7, #f2d9d9);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-text {
+            color: #8b4444;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .highlight-box:hover .highlight-text {
+            color: #a55555;
+        }
+
+        /* List styling */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #f2d9d9;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li:hover {
+            background: rgba(242, 217, 217, 0.1);
+            padding-left: 40px;
+        }
+
+        .feature-list li::before {
+            content: '🌊';
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-list li:hover::before {
+            transform: scale(1.2);
+        }
+
+        /* Grid layout for features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            background: #f2d9d9;
+            color: white;
+            transform: translateY(-5px);
+            border-color: #e6c7c7;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-title {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #b85555;
+            transition: color 0.3s ease;
+        }
+
+        .feature-card:hover .feature-title {
+            color: white;
+        }
+
+        .feature-description {
+            font-size: 1em;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .feature-card:hover .feature-description {
+            color: white;
+        }
+
+        /* Statistics section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            background: rgba(242, 217, 217, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: #f2d9d9;
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #b85555;
+            transition: color 0.3s ease;
+        }
+
+        .stat-item:hover .stat-number {
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .stat-item:hover .stat-label {
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(242, 217, 217, 0.3);
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer p {
+            color: #b85555;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .footer:hover p {
+            color: #c96666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .back-button {
+                margin: 0 20px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Flowing water animation */
+        @keyframes flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .water-flow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .water-flow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #87ceeb, transparent);
+            animation: flow 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Back Button -->
+    <div class="header">
+        <a href="index.html#tourism" class="back-button">← Back to Tourism</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section water-flow">
+            <h1 class="hero-title">Mahanadi</h1>
+            <img src="Mahanadi_river.webp" alt="Mahanadi River" class="hero-image">
+            <p class="hero-subtitle">"The Great River - Lifeline of Odisha and Chhattisgarh"</p>
+        </div>
+
+        <!-- River Statistics -->
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">858</div>
+                <div class="stat-label">Kilometers Long</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">141,589</div>
+                <div class="stat-label">Sq Km Basin Area</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">States Connected</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">53</div>
+                <div class="stat-label">Tributaries</div>
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="content-section">
+            <h2 class="section-title">History of Mahanadi</h2>
+            <div class="section-content">
+                <p>
+                    The Mahanadi, meaning "Great River" in Sanskrit, is one of the major rivers of peninsular India and holds immense 
+                    historical, cultural, and economic significance. Originating from the highlands of Chhattisgarh near Sihawa in 
+                    Dhamtari district, this mighty river flows eastward for 858 kilometers before emptying into the Bay of Bengal.
+                </p>
+                
+                <div class="highlight-box">
+                    <p class="highlight-text">
+                        Ancient texts and inscriptions dating back to the 2nd century BCE mention Mahanadi as "Mahananda," 
+                        highlighting its significance in early Indian civilization and trade routes.
+                    </p>
+                </div>
+
+                <p>
+                    Throughout history, the Mahanadi has been the backbone of agricultural prosperity in the region. The river has 
+                    witnessed the rise and fall of numerous dynasties, including the Kalinga Empire, which flourished along its banks. 
+                    The famous Kalinga War fought by Emperor Ashoka took place in the delta region of this river, marking a turning 
+                    point in Indian history.
+                </p>
+
+                <h3 style="color: #b85555; margin: 25px 0 15px 0; font-size: 1.5em;">Historical Milestones:</h3>
+                <p><b>
+                    The Mahanadi River, one of India’s major rivers, has played a pivotal role in the history, culture, and economy of eastern India. Originating from the Sihawa hills of the Dhamtari district in present-day Chhattisgarh, it flows about 851 kilometres before entering Odisha and finally emptying into the Bay of Bengal. In ancient times, the river was known as the Chitrotpala and is mentioned in several Puranic texts and regional legends, highlighting its sacredness and fertility. Historically, the Mahanadi basin supported some of the earliest settlements in Odisha and Chhattisgarh, becoming a cradle for agriculture, trade, and temple culture. Over centuries, its fertile plains allowed the growth of cities like Sambalpur, Cuttack, and Banki, which thrived on riverine trade routes. Cuttack, the former capital of Odisha, was founded on its banks in the 10th century CE, taking advantage of the natural protection and transportation the river provided.
+                </b></p><br>
+                <p><b>
+                    The Mahanadi has also been deeply tied to Odisha’s temple architecture and spiritual life. Numerous shrines — including the famous Dhabaleswar Temple on its islands — arose along its course, blending river worship with Shaivite traditions. During medieval times under the Somavamshi, Eastern Ganga, and later the Maratha rulers, the river was central to irrigation, rice cultivation, and inland navigation, linking coastal trade ports with interior markets. In modern history, British engineers recognised its potential for water management and trade, laying the groundwork for the construction of one of India’s largest multipurpose dams, the Hirakud Dam, completed in 1957. This project transformed the river’s course in terms of flood control, irrigation, and hydroelectricity, marking a major turning point in its management.
+                </b></p><br>
+                <p><b>
+                    Today, the Mahanadi remains a lifeline for millions of people in Chhattisgarh and Odisha. It sustains agriculture, industry, and fisheries while retaining its sacred status in local culture, especially during festivals like Kartika Purnima, when thousands of devotees perform rituals along its ghats. The river’s long journey from myth and medieval trade to modern development reflects its enduring importance to the region’s history, making it not just a physical waterway but a living thread connecting Odisha’s past, present, and future.
+                </b></p><br>
+
+                <p>
+                    The river has been revered in Hindu mythology and is considered sacred by millions. Ancient temples and ghats 
+                    along its course bear testimony to its spiritual significance. The Mahanadi has also played a crucial role in 
+                    shaping the cultural identity of Odisha and Chhattisgarh, influencing art, literature, and traditional practices.
+                </p>
+            </div>
+        </div>
+
+        <!-- Why Visit Section -->
+        <div class="content-section">
+            <h2 class="section-title">Why Should You Visit</h2>
+            <div class="section-content">
+                <p>
+                    The Mahanadi river system offers a unique blend of natural beauty, cultural heritage, and spiritual experiences. 
+                    From its pristine source in the hills of Chhattisgarh to its magnificent delta in Odisha, the river presents 
+                    countless opportunities for exploration, adventure, and enlightenment.
+                </p>
+
+                
+            </div>
+            <p><b>
+                The Mahanadi River is much more than just a waterway; it’s a lifeline of culture, history, and nature in eastern India. Flowing through scenic hills, fertile plains, and historic towns, it offers a unique experience for visitors. Its banks host famous heritage sites like Dhabaleswar Temple, Cuttack’s ancient ghats, and several other shrines and historic spots that reveal Odisha’s deep spiritual roots. The river itself is beautiful — especially around Cuttack and Sambalpur — where you can see broad stretches of water, lush greenery, and vibrant village life, making it perfect for photography, picnics, and quiet reflection.
+            </b></p><br>
+            <p><b>
+                Mahanadi also offers a chance to experience Odisha’s living culture. During festivals like Kartika Purnima, thousands gather along its ghats to float tiny boats of leaves with lamps, creating a magical, golden glow over the water at dawn. The river is also home to a variety of birdlife and supports fishing communities whose traditions go back centuries, making it a great place to observe local livelihoods. Beyond its natural and cultural appeal, visiting the river gives you a sense of the region’s history — from ancient trade routes to modern feats like the Hirakud Dam — and helps you understand how this mighty river shaped Odisha’s identity.
+            </b></p><br>
+            <p><b>
+                Visiting the Mahanadi River also lets you experience its tranquil natural beauty and its powerful role in shaping everyday life in Odisha and Chhattisgarh. Standing on its ghats or crossing it by boat, you can watch fishermen casting their nets, farmers working on its fertile banks, and birds skimming the water — scenes that have remained unchanged for centuries. Around sunrise and sunset, the river becomes especially picturesque, reflecting the sky in shimmering colours and offering a perfect spot for photography or quiet contemplation. Whether you’re exploring historic temples on its islands, attending riverside festivals, or simply enjoying its cooling breeze, the Mahanadi offers a blend of history, spirituality, and scenic charm that makes it one of the most memorable natural landmarks to visit in eastern India.
+            </b></p>
+
+              
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Tourism Guide | Discover the Majesty of Mahanadi River</p>
+    </div>
+
+   
+</body>
+</html>

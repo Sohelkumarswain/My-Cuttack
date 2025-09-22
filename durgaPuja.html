@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Puja - Festival Celebrations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #b3ecff 0%, #ffffff 50%, #b3ecff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #b3ecff, #87ceeb);
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(179, 236, 255, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(179, 236, 255, 0.5);
+            background: linear-gradient(45deg, #87ceeb, #b3ecff);
+            border-color: #fff;
+            color: #000;
+        }
+
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(179, 236, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(179, 236, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(179, 236, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .header h1:hover {
+            color: #3498db;
+            transform: scale(1.05);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Hero Image Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(45deg, #b3ecff, #e6f7ff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(179, 236, 255, 0.4);
+            transition: all 0.4s ease;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02) rotateY(5deg);
+            box-shadow: 0 20px 50px rgba(179, 236, 255, 0.6);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .placeholder-text {
+            font-size: 1.5rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(179, 236, 255, 0.2);
+            transition: all 0.3s ease;
+            border-left: 5px solid #b3ecff;
+        }
+
+        .content-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(179, 236, 255, 0.3);
+            border-left-color: #87ceeb;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .content-section h2:hover {
+            color: #3498db;
+            transform: translateX(10px);
+        }
+
+        .content-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #b3ecff, #87ceeb);
+            transition: width 0.3s ease;
+        }
+
+        .content-section:hover h2::after {
+            width: 100%;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover p {
+            color: #333;
+        }
+
+        /* Special styling for celebration section */
+        .celebration-section {
+            background: linear-gradient(135deg, rgba(179, 236, 255, 0.1), rgba(255, 255, 255, 0.95));
+        }
+
+        .celebration-section:hover {
+            background: linear-gradient(135deg, rgba(179, 236, 255, 0.2), rgba(255, 255, 255, 0.98));
+        }
+
+        /* Special styling for places section */
+        .places-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(179, 236, 255, 0.1));
+        }
+
+        .places-section:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(179, 236, 255, 0.2));
+        }
+
+        /* Decorative elements */
+        .section-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #b3ecff, #87ceeb);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover .section-icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(179, 236, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .content-section:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .content-section:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .content-section:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html#festivals" class="back-button" onclick="goBackToFestivals()">Back to Festivals</a>
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Durga Puja</h1>
+            <p>The Grand Festival of Divine Feminine Power</p>
+        </div>
+
+        <!-- Hero Image Section -->
+        <div class="hero-section">
+            <div class="hero-image">
+                <!-- Replace this with your actual Durga Puja image -->
+                <!-- <img src="path/to/your/durga-puja-image.jpg" alt="Durga Puja Celebration"> -->
+                <div class="placeholder-text">
+                   <img src="DurgaPujaa2.jpg" alt="Durga Puja Celebration" >
+                </div>
+            </div>
+        </div>
+
+        <!-- Celebration in Cuttack Section -->
+        <div class="content-section celebration-section">
+            <div class="section-icon">🎉</div>
+            <h2>Joyful Celebrations in Cuttack</h2>
+          <p><b>
+                    Durga Puja in Cuttack is celebrated with unmatched grandeur and joy, famous especially for its chandi medha or silver filigree decorations. The entire city comes alive with dazzling pandals, artistic gates, and vibrant lighting. Families and friends spend evenings “pandal hopping,” visiting the beautifully decorated shrines of Goddess Durga spread across the city. Rituals like pushpanjali, arati, and bhajans are performed with devotion, while cultural programs, street performances, and fairs turn the city into a huge carnival. Food stalls selling local favorites like dahibara aloodum, sweets, and snacks add to the festive charm, making the celebration both spiritual and social.
+                </b></p><br>
+                <p><b>
+                    On Vijaya Dashami, the festival reaches its climax with a grand immersion procession. Thousands of devotees accompany the idols with drums, chants, and fireworks on their way to the Kathajodi and Mahanadi rivers for immersion. This marks the symbolic departure of Goddess Durga and the hope for her return the next year. Beyond religion, the festival reflects the unity and cultural vibrancy of Cuttack, bringing people from all walks of life together in a spirit of joy, devotion, and celebration.
+                </b></p>
+
+        </div>
+
+        <!-- Famous Places Section -->
+        <div class="content-section places-section">
+            <div class="section-icon">📍</div>
+            <h2>Famous Durga Puja Places in Cuttack</h2>
+            <p><b>
+                    Chandni Chowk is one of the most iconic locations in Cuttack for Durga Puja celebrations. Known for its elaborate pandals and artistic decorations, it attracts thousands of devotees and tourists every year. The area is famous for its traditional silver filigree work, which adorns the idols and pandals, showcasing the rich craftsmanship of Cuttack.
+                </b></p><br>
+               <h3>Badambadi :</h3>
+               <p><b>
+                   Badambadi is another prominent area in Cuttack known for its vibrant Durga Puja celebrations. The local community comes together to create stunning pandals, often depicting mythological themes and stories. The atmosphere is filled with devotion and enthusiasm, making it a must-visit during the festival.
+               </b></p><br>
+               <h3>Choudhury Bazar :</h3>
+               <p><b>
+                   Choudhury Bazar is famous for its unique and artistic Durga Puja celebrations. The pandals here are known for their innovative designs and themes, attracting visitors from all over the city. The local shops and eateries also contribute to the festive spirit, making it a lively place to experience the celebrations.
+               </b></p><br>
+               <h3>Chauliaganj :</h3>
+               <p><b>
+                   Chauliaganj is another key area in Cuttack where Durga Puja is celebrated with great fervor. The local community takes pride in creating beautiful pandals that often reflect contemporary themes and social messages. The atmosphere is vibrant, with cultural programs and food stalls adding to the festive mood.
+               </b></p>
+
+        </div>
+    </div>
+
+    <script>
+        
+
+       
+
+            // Add click animation to sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        ;
+    </script>
+</body>
+</html>

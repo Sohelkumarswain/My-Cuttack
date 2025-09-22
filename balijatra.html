@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali Jatra </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ffcccc 0%, #ffe6e6 50%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #dc3545, #c82333);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+            background: linear-gradient(45deg, #c82333, #dc3545);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 204, 204, 0.3);
+        }
+
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+
+        /* Main Image Section */
+        .main-image {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .festival-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 3px solid #ffffff;
+        }
+
+        .festival-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #ffffff;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #ffcccc;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #dc3545;
+            padding-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .content-section:hover h2 {
+            color: #dc3545;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #495057;
+            text-align: justify;
+        }
+
+        /* History Section Specific Styling */
+        .history-section {
+            background: linear-gradient(135deg, rgba(255, 204, 204, 0.1), rgba(255, 230, 230, 0.1));
+        }
+
+        .history-section h2 {
+            border-bottom-color: #fd7e14;
+        }
+
+        .history-section:hover h2 {
+            color: #fd7e14;
+        }
+
+        /* Famous Section Specific Styling */
+        .famous-section {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 204, 204, 0.1));
+        }
+
+        .famous-section h2 {
+            border-bottom-color: #ffc107;
+        }
+
+        .famous-section:hover h2 {
+            color: #ffc107;
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            height: 4px;
+            background: linear-gradient(90deg, #dc3545, #fd7e14, #ffc107, #ff6b9d);
+            margin: 30px 0;
+            border-radius: 2px;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 2rem;
+            }
+
+            .festival-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Additional Hover Effects */
+        .back-button::before {
+            content: '← ';
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover::before {
+            transform: translateX(-5px);
+            display: inline-block;
+        }
+
+        /* Floating Animation for Decorative Elements */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Light theme enhancements with pink tones */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 204, 204, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(255, 240, 245, 0.2) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Additional decorative elements */
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffcccc, #ff6b9d, #ffcccc);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .content-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover glow effect */
+        .content-section:hover {
+            box-shadow: 0 15px 40px rgba(255, 204, 204, 0.3), 0 0 30px rgba(255, 204, 204, 0.2);
+        }
+
+        .header:hover {
+            box-shadow: 0 12px 40px rgba(255, 204, 204, 0.2), 0 0 25px rgba(255, 204, 204, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html#culture" class="back-button">Back to Culture</a>
+
+        <!-- Header Section -->
+        <div class="header floating">
+            <h1>Bali Jatra</h1>
+            <p>Asia's largest trade fairs</p>
+        </div>
+
+        <!-- Main Festival Image -->
+        <div class="main-image">
+            <!-- Placeholder for Bali Jatra image -->
+            <img src="Balijatra1Img.webp" 
+                 alt="Bali Jatra Festival" 
+                 class="festival-image">
+        </div>
+
+        <div class="decorative-line"></div>
+
+        <!-- History Section -->
+        <div class="content-section history-section">
+            <h2>History of Bali Jatra</h2>
+            <p>
+               <b>Bali Jatra, literally meaning “Voyage to Bali,” is one of Cuttack’s most iconic and historic festivals, celebrated every year on the banks of the Mahanadi River during Kartik Purnima (November). It commemorates Odisha’s ancient maritime legacy when traders and sailors, called Sadhabas, sailed from ports like Cuttack to distant lands such as Bali, Java, Sumatra, and Sri Lanka for trade and cultural exchange over a thousand years ago. On this day, people perform Boita Bandana, floating miniature boats made of banana stem, paper, or cork with diyas and betel leaves, symbolizing the voyages of their ancestors. The festival has evolved into one of Asia’s largest open-air fairs, featuring thousands of stalls selling handicrafts, silver filigree work, traditional foods, and modern goods. Cultural performances, folk dances, maritime exhibitions, and rides add to its carnival-like atmosphere. Bali Jatra thus stands as a living reminder of Odisha’s seafaring past, blending history, tradition, and community celebration on a massive scale in Cuttack.</b>
+            </p>
+        </div>
+
+        <!-- Why Famous Section -->
+        <div class="content-section famous-section">
+            <h2>Why It Is Famous</h2>
+            <p>
+                <b>
+                     Bali Jatra has gained immense fame as one of Asia's largest trade fairs and cultural festivals. The festival is renowned for its massive scale, featuring thousands of stalls selling everything from traditional handicrafts to modern goods, delicious street food, and cultural performances. The festival ground transforms into a vibrant marketplace that recreates the ancient trading atmosphere of medieval Kalinga.
+
+                The festival is famous for its unique boat-shaped stalls called "Boita," which symbolize the ancient trading vessels. Visitors can enjoy traditional Odia cuisine, witness spectacular cultural performances, and participate in various competitions and exhibitions. The highlight of the festival is the "Boita Bandana" ritual, where people float miniature boats made of banana bark in rivers and ponds, commemorating their ancestors' maritime adventures.
+
+                Bali Jatra serves as a bridge between the past and present, preserving ancient maritime traditions while embracing modern commercial activities. The festival's fame extends beyond Odisha, attracting international visitors and researchers interested in maritime history and cultural heritage. It has become a symbol of Odisha's rich cultural legacy and its historical connections with Southeast Asia.
+                </b>
+            </p>
+        </div>
+
+        <div class="decorative-line"></div>
+    </div>
+</body>
+</html>

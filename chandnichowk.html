@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandni Chowk - Historic Market of Delhi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #e6b3b3 0%, #ffffff 50%, #e6b3b3 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(rgba(230, 179, 179, 0.9), rgba(255, 255, 255, 0.9));
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 0 50px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #e6b3b3, #d4a4a4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(230, 179, 179, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #d4a4a4, #c29999);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 179, 179, 0.6);
+            border-color: #b88888;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            color: #8b4444;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .hero-title:hover {
+            color: #a55555;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #e6b3b3;
+        }
+
+        .content-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            border-left-color: #d4a4a4;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #8b4444;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #a55555;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #e6b3b3, #d4a4a4);
+            margin: 15px auto;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 150px;
+        }
+
+        .section-content {
+            font-size: 1.2em;
+            text-align: justify;
+            color: #555;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .section-content:hover {
+            color: #333;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #e6b3b3, #f0c7c7);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #d4a4a4;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            background: linear-gradient(135deg, #d4a4a4, #e6b3b3);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* List styling */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e6b3b3;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li:hover {
+            background: rgba(230, 179, 179, 0.1);
+            padding-left: 40px;
+        }
+
+        .feature-list li::before {
+            content: '✦';
+            color: #8b4444;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            transition: color 0.3s ease;
+        }
+
+        .feature-list li:hover::before {
+            color: #a55555;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(230, 179, 179, 0.3);
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer p {
+            color: #8b4444;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .footer:hover p {
+            color: #a55555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .back-button {
+                margin: 0 20px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Back Button -->
+    <div class="header">
+        <a href="index.html#tourism" class="back-button">← Back to Tourism</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">Chandni Chowk</h1>
+            <img src="chandii chhak.avif" alt="Chandni Chowk Market" class="hero-image">
+            <p style="font-size: 1.3em; color: #666; margin-top: 20px; font-style: italic;">
+                "Experience the heartbeat of cuttack's wholesale market"
+            </p>
+        </div>
+
+        <!-- History Section -->
+        <div class="content-section">
+            <h2 class="section-title">History of Chandni Chowk</h2>
+            <div class="section-content">
+               <p><b>
+                The market known as Chandini Chowk in Cuttack is one of the older bazaars in the city, deeply intertwined with religious, cultural, and commercial life. It has come to prominence not only as a shopping area but also as a center for community festivals; for example, the Chandini Chowk Puja committee organises a Durga Puja that is said to have roots going back to 1817, when a Bengali family started worship with a clay (mrinamayee) idol in a thatch-house at Asta Sambhu temple in the area. Over time, the Puja grew, and by the late nineteenth century it transformed into what is called a sarbajanin Puja (a community Puja)—various local neighbourhoods (dusah sahis) came together to support it.
+               </b></p><br>
+               <p><b>
+                In addition to its religious importance, Chandini Chowk evolved as a marketplace: narrow lanes, shops of many kinds, traditional food stalls, sweets, small vendors — much of which reflect the old-city commercial culture. It has a reputation for its silver filigree work, especially in its Durga Puja pandals, where decorations and backdrops made of silver are crafted by local artisans. The local silver work is considered special, and the backdrop in the Chandini Chowk Puja Pandal is often noted for its artistry.
+               </b></p><br>
+               <p><b>
+                The festival traditions are especially strong: one of the distinctive customs is the offering of fish (‘machha bhog’) on Navami of Durga Puja, cooked in large quantities (hundreds of kilograms) and then distributed among devotees and local traders. This practice is part of Chandini Chowk’s identity during the puja season.
+               </b></p><br>
+               <p><b>
+                Over the more recent decades, the market has continued to retain much of its old-character: narrow alleys, dense shops, street-food, a mingling of people of different faiths; it’s considered part of the heritage fabric of Cuttack. The silver filigree decorations, the way the Pandals are constructed, the face styles of the Goddess idols, the rituals, all show a continuity that many locals are proud of.
+               </b></p>
+            </div>
+        </div>
+
+        <!-- Why Visit Section -->
+        <div class="content-section">
+            <h2 class="section-title">Why Should You Visit</h2>
+            <div class="section-content">
+                <p>
+                    Chandni Chowk offers an unparalleled experience that combines history, culture, cuisine, and commerce in one 
+                    vibrant location. Here's why this iconic marketplace should be on every traveler's itinerary:
+                </p>
+
+                <ul class="feature-list">
+                    <li><strong>Shopping Hub</strong> Famous for traditional Odia textiles, jewellery, household items and especially Cuttack’s renowned silver filigree work..</li>
+                    
+                    <li><strong>Durga Puja Attractions</strong> Home to one of Cuttack’s oldest and grandest Durga Pujas with the spectacular silver backdrop (Chandi Medha).</li>
+                    
+                    <li><strong>Cultural Heritage</strong> Offers a glimpse of Cuttack’s old city charm, narrow lanes, historic temples and centuries-old community traditions.</li>
+                    
+                    <li><strong>Authentic Street Food</strong>Great place to taste Odia snacks and sweets like Dahibara Aloodum, Rasagola, and other local favourites.</li>
+                    
+                    <li><strong>Art & Craft Experience</strong> Witness artisans working on filigree and traditional crafts, especially before festival seasons.</li>
+                    
+                    <li><strong>Heritage Walk Friendly</strong> Perfect for walking tours, photography and exploring the blend of history, religion and trade in one place.</li>
+                </ul>
+
+               
+
+                <p>
+                   <b> Whether you're a history enthusiast, food lover, shopping aficionado, or cultural explorer, Chandni Chowk offers 
+                    something unique for everyone. It's not just a market; it's a journey through time where every step tells a story 
+                    of India's glorious past and vibrant present.</b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Tourism Guide | Discover the Magic of Chandni Chowk</p>
+    </div>
+
+  
+</body>
+</html>

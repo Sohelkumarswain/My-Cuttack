@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makar Sankranti - Festival Celebrations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #99b3e6 0%, #ffffff 50%, #99b3e6 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #99b3e6, #7a9bd9);
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(153, 179, 230, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(153, 179, 230, 0.5);
+            background: linear-gradient(45deg, #7a9bd9, #99b3e6);
+            border-color: #fff;
+            color: #000;
+        }
+
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(153, 179, 230, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(153, 179, 230, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(153, 179, 230, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .header h1:hover {
+            color: #5a6fd8;
+            transform: scale(1.05);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Hero Image Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(45deg, #99b3e6, #d6e0f5);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(153, 179, 230, 0.4);
+            transition: all 0.4s ease;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02) rotateY(5deg);
+            box-shadow: 0 20px 50px rgba(153, 179, 230, 0.6);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .placeholder-text {
+            font-size: 1.5rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(153, 179, 230, 0.2);
+            transition: all 0.3s ease;
+            border-left: 5px solid #99b3e6;
+        }
+
+        .content-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(153, 179, 230, 0.3);
+            border-left-color: #7a9bd9;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .content-section h2:hover {
+            color: #5a6fd8;
+            transform: translateX(10px);
+        }
+
+        .content-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #99b3e6, #7a9bd9);
+            transition: width 0.3s ease;
+        }
+
+        .content-section:hover h2::after {
+            width: 100%;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            padding: 10px;
+            background: linear-gradient(45deg, rgba(153, 179, 230, 0.1), transparent);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .content-section h3:hover {
+            background: linear-gradient(45deg, rgba(153, 179, 230, 0.2), rgba(153, 179, 230, 0.1));
+            transform: translateX(10px);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .content-section:hover p {
+            color: #333;
+        }
+
+        .content-section p:hover {
+            background: rgba(153, 179, 230, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* Special styling for celebration section */
+        .celebration-section {
+            background: linear-gradient(135deg, rgba(153, 179, 230, 0.1), rgba(255, 255, 255, 0.95));
+        }
+
+        .celebration-section:hover {
+            background: linear-gradient(135deg, rgba(153, 179, 230, 0.2), rgba(255, 255, 255, 0.98));
+        }
+
+        /* Special styling for places section */
+        .places-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(153, 179, 230, 0.1));
+        }
+
+        .places-section:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(153, 179, 230, 0.2));
+        }
+
+        /* Places Grid */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .place-card {
+            background: linear-gradient(135deg, #ffffff, rgba(153, 179, 230, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(153, 179, 230, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .place-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(153, 179, 230, 0.3);
+            border-color: #7a9bd9;
+            background: linear-gradient(135deg, rgba(153, 179, 230, 0.1), #ffffff);
+        }
+
+        .place-card h4 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .place-card:hover h4 {
+            color: #5a6fd8;
+        }
+
+        .place-card p {
+            color: #555;
+            font-size: 1rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Decorative elements */
+        .section-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #99b3e6, #7a9bd9);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover .section-icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(153, 179, 230, 0.5);
+        }
+
+        /* List styling */
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-section li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .content-section li:before {
+            content: "🪁";
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .content-section li:hover {
+            padding-left: 30px;
+            color: #5a6fd8;
+            background: rgba(153, 179, 230, 0.1);
+        }
+
+        .content-section li:hover:before {
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(153, 179, 230, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .footer:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer p {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .content-section:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .content-section:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .content-section:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html#festivals" class="back-button" onclick="goBackToFestivals()">Back to Festivals</a>
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Makar Sankranti</h1>
+            <p>The Festival of Kites and Harvest Celebration</p>
+        </div>
+
+        <!-- Hero Image Section -->
+        <div class="hero-section">
+            <div class="hero-image">
+                <!-- Replace this with your actual Makar Sankranti image -->
+                <!-- <img src="path/to/your/makar-sankranti-image.jpg" alt="Makar Sankranti Celebration"> -->
+                <div class="placeholder-text">
+                    <img src="kite-flying-festival.jpg" alt="Kite festival">
+                </div>
+            </div>
+        </div>
+
+        <!-- Celebration in Cuttack Section -->
+        <div class="content-section celebration-section">
+            <div class="section-icon">🎉</div>
+            <h2>Joyful Celebrations in Cuttack</h2>
+            
+            <h3>The Festival of Kites</h3>
+            <p>
+                <b>
+                    Makar Sankranti, celebrated on January 14th each year, marks the transition of the sun into the zodiac sign of Capricorn (Makara). It is a significant harvest festival in India, symbolizing the end of winter and the beginning of longer days. The festival is known by various names across different regions, such as Pongal in Tamil Nadu, Lohri in Punjab, and Uttarayan in Gujarat. Makar Sankranti is characterized by vibrant kite flying, traditional rituals, and the preparation of special sweets made from sesame seeds (til) and jaggery (gur), symbolizing warmth and togetherness.
+                </b>
+
+            </p>
+            <p>
+                <b>
+                    In Cuttack, Makar Sankranti is celebrated with devotion, and a vibrant community spirit. People wake up early in the morning to take holy baths in rivers or ponds, believing it purifies the body and soul, and then visit temples such as the famous Katak Chandi Temple to offer prayers and seek blessings. Homes are filled with the aroma of traditional delicacies like Makar Chaula, Arisa Pitha, Kakara Pitha, and Chakuli Pitha, which are prepared and shared with family, friends, and neighbors. Charity plays a central role in the festival, with people donating rice, sesame, jaggery, and clothes to the poor, reflecting the festival’s spirit of giving. The day is also marked by kite flying, joyful gatherings, and cultural activities in different neighborhoods. These rituals, combined with the exchange of festive foods and community bonding, give Makar Sankranti in Cuttack a warm, lively, and deeply traditional atmosphere.
+                </b>
+            </p>
+            
+           
+        </div>
+
+        <!-- Famous Places Section -->
+        <div class="content-section places-section">
+            <div class="section-icon">📍</div>
+            <h2>Famous Makar Sankranti Places in Cuttack</h2>
+            
+            <p>
+                Cuttack offers several magnificent locations where Makar Sankranti is celebrated with grandeur and traditional fervor. These places become the epicenter of kite flying activities and cultural celebrations during the festival.
+            </p>
+            
+            <div class="places-grid">
+                <div class="place-card">
+                    <h4>🏛️ Barabati Stadium Area</h4>
+                    <p>The open grounds around Barabati Stadium become a hub for large-scale kite flying competitions. Families and friends gather here to participate in organized events and enjoy the festive atmosphere.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🌊 Mahanadi Riverbank</h4>
+                    <p>The banks of Mahanadi River offer a scenic location for kite flying with open spaces and gentle breezes. The riverside celebrations include traditional boat rides and cultural programs.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🏰 Cuttack Chandi Temple</h4>
+                    <p>The temple premises and surrounding areas host special prayers and cultural events during Makar Sankranti. Devotees gather here for blessings and participate in community celebrations.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🎪 Millennium City Centre</h4>
+                    <p>Modern celebration venues in the city center organize kite festivals, food stalls, and cultural programs. These areas blend traditional celebrations with contemporary festivities.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🏘️ Residential Rooftops</h4>
+                    <p>The rooftops of residential areas across Cuttack become vibrant celebration spots where neighbors compete in friendly kite battles and share traditional sweets and delicacies.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🌳 Deer Park Area</h4>
+                    <p>The open spaces around Deer Park provide excellent venues for kite flying with ample space for families to enjoy picnics and outdoor activities during the festival.</p>
+                </div>
+            </div>
+
+           
+
+            <h3>🪁 The Sky Festival Experience</h3>
+            <p>
+                The celebration reaches its peak during the afternoon when the sky becomes a spectacular display of hundreds of colorful kites dancing in the wind. The competitive spirit, combined with the joy of togetherness, creates an unforgettable experience that captures the essence of Cuttack's vibrant culture and the timeless tradition of Makar Sankranti.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>🪁 Experience the joy and colors of Makar Sankranti in the beautiful city of Cuttack 🪁</p>
+        </div>
+    </div>
+
+    <script>
+        
+
+
+            // Add click animation to sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Add floating kite animation
+            const createFloatingKite = () => {
+                const kite = document.createElement('div');
+                kite.innerHTML = '🪁';
+                kite.style.position = 'fixed';
+                kite.style.fontSize = '20px';
+                kite.style.zIndex = '1000';
+                kite.style.pointerEvents = 'none';
+                kite.style.left = Math.random() * window.innerWidth + 'px';
+                kite.style.top = window.innerHeight + 'px';
+                kite.style.transition = 'all 8s linear';
+                document.body.appendChild(kite);
+
+                setTimeout(() => {
+                    kite.style.top = '-50px';
+                    kite.style.left = Math.random() * window.innerWidth + 'px';
+                }, 100);
+
+                setTimeout(() => {
+                    document.body.removeChild(kite);
+                }, 8000);
+            };
+
+            // Create floating kites periodically
+            setInterval(createFloatingKite, 3000);
+        ;
+    </script>
+</body>
+</html>

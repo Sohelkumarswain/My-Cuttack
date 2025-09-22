@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Cuisine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+            background: linear-gradient(45deg, #0056b3, #007bff);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(230, 230, 230, 0.5);
+        }
+
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+
+        /* Main Image Section */
+        .main-image {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .dish-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 3px solid #ffffff;
+        }
+
+        .dish-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #ffffff;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .content-section:hover h2 {
+            color: #007bff;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #495057;
+            text-align: justify;
+        }
+
+        /* History Section Specific Styling */
+        .history-section {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(108, 117, 125, 0.05));
+        }
+
+        .history-section h2 {
+            border-bottom-color: #28a745;
+        }
+
+        .history-section:hover h2 {
+            color: #28a745;
+        }
+
+        /* Famous Section Specific Styling */
+        .famous-section {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.05), rgba(255, 193, 7, 0.05));
+        }
+
+        .famous-section h2 {
+            border-bottom-color: #ffc107;
+        }
+
+        .famous-section:hover h2 {
+            color: #ffc107;
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #28a745, #ffc107, #dc3545);
+            margin: 30px 0;
+            border-radius: 2px;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 2rem;
+            }
+
+            .dish-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Additional Hover Effects */
+        .back-button::before {
+            content: '← ';
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover::before {
+            transform: translateX(-5px);
+            display: inline-block;
+        }
+
+        /* Floating Animation for Decorative Elements */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Light theme enhancements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html#culture" class="back-button">Back to Culture</a>
+
+        <!-- Header Section -->
+        <div class="header floating">
+            <h1>Dahi Bara Aloo Dum</h1>
+            <p>A Traditional Culinary Masterpiece</p>
+        </div>
+
+        <!-- Main Dish Image -->
+        <div class="main-image">
+            <!-- Placeholder for Dahi Bara Aloo Dum image -->
+            <img src="dahibara_img.jpg" 
+                 alt="Dahibara Aloo Dum" 
+                 class="dish-image">
+        </div>
+
+        <div class="decorative-line"></div>
+
+        <!-- History Section -->
+        <div class="content-section history-section">
+            <h2>History of Dahi Bara Aloo Dum</h2>
+            <p>
+              <b>
+                 Dahi Bara Aloo Dum is Cuttack’s most iconic street food, deeply woven into the city’s culture and daily life. It evolved from the traditional Indian dahi vada but gained a distinct Odia identity in the early to mid-20th century, when local vendors in marketplaces like Balu Bazaar and Bidanasi began topping soft lentil baras soaked in lightly spiced yogurt water with hot, tangy potato curry (aloo dum) and yellow pea curry (ghugni). This innovation created a filling, affordable snack that suited the city’s humid climate and busy working-class population. Over decades, Dahi Bara Aloo Dum became a staple breakfast and festival food, especially during Durga Puja and Bali Yatra, and today it is celebrated as “the soul food of Cuttack,” drawing visitors to its famous roadside stalls and symbolizing the city’s blend of tradition, ingenuity, and community spirit.
+              </b>
+            </p>
+        </div>
+
+        <!-- Why Famous Section -->
+        <div class="content-section famous-section">
+            <h2>Why It Is Famous</h2>
+            <p><b>
+                Dahi Bara Aloo Dum is famous for its unique combination of flavors and textures that create a delightful culinary experience. The dish features soft, spongy lentil dumplings (bara) soaked in chilled, tangy yogurt (dahi), which provides a refreshing contrast to the hot and spicy potato curry (aloo dum) served alongside. This blend of cool and warm elements, along with the creamy and spicy flavors, makes it a perfect comfort food, especially in Cuttack's humid climate. Additionally, its affordability and availability at street food stalls across the city have made it a beloved snack for locals and tourists alike. The dish is often garnished with fresh coriander, sev (crispy noodles), and a sprinkle of chaat masala, enhancing its taste and visual appeal. Its cultural significance during festivals and social gatherings further cements its status as an iconic dish of Cuttack.
+            </b></p>
+            
+        </div>
+
+        <div class="decorative-line"></div>
+    </div>
+</body>
+</html>

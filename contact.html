@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cuttack Silver City</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-form { max-width: 500px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .contact-form h2 { color: #4a4a8a; margin-bottom: 1.5rem; text-align: center; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: #333; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+        .submit-btn { background: #4a4a8a; color: #fff; border: none; padding: 0.7rem 2rem; border-radius: 5px; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
+        .submit-btn:hover { background: #333366; }
+        @media (max-width: 600px) { .contact-form { padding: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Cuttack - Silver City</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="festivals.html">Festivals</a></li>
+                <li><a href="tourism.html">Tourism</a></li>
+                <li><a href="Education.html">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <div class="contact-form">
+                <h2 class="section-title">Send us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="tourism">Tourism Information</option>
+                            <option value="business">Business/Investment</option>
+                            <option value="complaint">Complaint/Grievance</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Please describe your inquiry in detail..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer style="background: #4a4a8a; color: #fff; padding: 2rem 0; text-align: center; margin-top: 2rem;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+            <p style="font-size: 1rem; opacity: 0.85; margin-bottom: 0.5rem;">
+                © 2025 Discover Cuttack. All Rights Reserved. Designed with <span style="color: #ff6b81;">&#10084;</span> for the Silver City.<br>
+                By Sohel Kumar Swain
+            </p>
+            <p style="font-size: 0.95rem; margin-bottom: 0.2rem;">
+                <b>Contact:</b> <a href="tel:+918917674037" style="color: #ffd700; text-decoration: underline;">+91-8917674037</a> | <b>Email:</b> <a href="mailto:sohelkumarswain8@gmail.com" style="color: #ffd700; text-decoration: underline;">sohelkumarswain8@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

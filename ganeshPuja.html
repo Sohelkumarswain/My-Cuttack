@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh Puja - Festival Celebrations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #adadeb 0%, #ffffff 50%, #adadeb 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #adadeb, #9b9bd9);
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(173, 173, 235, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(173, 173, 235, 0.5);
+            background: linear-gradient(45deg, #9b9bd9, #adadeb);
+            border-color: #fff;
+            color: #000;
+        }
+
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(173, 173, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(173, 173, 235, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(173, 173, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .header h1:hover {
+            color: #6b5dd9;
+            transform: scale(1.05);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Hero Image Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(45deg, #adadeb, #e6e6f5);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(173, 173, 235, 0.4);
+            transition: all 0.4s ease;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02) rotateY(5deg);
+            box-shadow: 0 20px 50px rgba(173, 173, 235, 0.6);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .placeholder-text {
+            font-size: 1.5rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(173, 173, 235, 0.2);
+            transition: all 0.3s ease;
+            border-left: 5px solid #adadeb;
+        }
+
+        .content-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(173, 173, 235, 0.3);
+            border-left-color: #9b9bd9;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .content-section h2:hover {
+            color: #6b5dd9;
+            transform: translateX(10px);
+        }
+
+        .content-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #adadeb, #9b9bd9);
+            transition: width 0.3s ease;
+        }
+
+        .content-section:hover h2::after {
+            width: 100%;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            padding: 10px;
+            background: linear-gradient(45deg, rgba(173, 173, 235, 0.1), transparent);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .content-section h3:hover {
+            background: linear-gradient(45deg, rgba(173, 173, 235, 0.2), rgba(173, 173, 235, 0.1));
+            transform: translateX(10px);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .content-section:hover p {
+            color: #333;
+        }
+
+        .content-section p:hover {
+            background: rgba(173, 173, 235, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* Special styling for celebration section */
+        .celebration-section {
+            background: linear-gradient(135deg, rgba(173, 173, 235, 0.1), rgba(255, 255, 255, 0.95));
+        }
+
+        .celebration-section:hover {
+            background: linear-gradient(135deg, rgba(173, 173, 235, 0.2), rgba(255, 255, 255, 0.98));
+        }
+
+        /* Special styling for places section */
+        .places-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(173, 173, 235, 0.1));
+        }
+
+        .places-section:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(173, 173, 235, 0.2));
+        }
+
+        /* Places Grid */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .place-card {
+            background: linear-gradient(135deg, #ffffff, rgba(173, 173, 235, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(173, 173, 235, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .place-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(173, 173, 235, 0.3);
+            border-color: #9b9bd9;
+            background: linear-gradient(135deg, rgba(173, 173, 235, 0.1), #ffffff);
+        }
+
+        .place-card h4 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .place-card:hover h4 {
+            color: #6b5dd9;
+            transform: scale(1.05);
+        }
+
+        .place-card p {
+            color: #555;
+            font-size: 1rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Decorative elements */
+        .section-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #adadeb, #9b9bd9);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover .section-icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(173, 173, 235, 0.5);
+        }
+
+        /* List styling */
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-section li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .content-section li:before {
+            content: "🐘";
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .content-section li:hover {
+            padding-left: 30px;
+            color: #6b5dd9;
+            background: rgba(173, 173, 235, 0.1);
+        }
+
+        .content-section li:hover:before {
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(173, 173, 235, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .footer:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer p {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .content-section:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .content-section:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .content-section:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        /* Special Ganesh elements */
+        .ganesh-blessing {
+            text-align: center;
+            font-size: 2rem;
+            color: #6b5dd9;
+            margin: 20px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(173, 173, 235, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(173, 173, 235, 0.8), 0 0 30px rgba(173, 173, 235, 0.6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html#festivals" class="back-button" onclick="goBackToFestivals()">Back to Festivals</a>
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Ganesh Puja</h1>
+            <p>The Festival of Lord Ganesha - Remover of Obstacles</p>
+            <div class="ganesh-blessing">🕉️ गणपति बप्पा मोरया 🕉️</div>
+        </div>
+
+        <!-- Hero Image Section -->
+        <div class="hero-section">
+            <div class="hero-image">
+                <!-- Replace this with your actual Ganesh Puja image -->
+                <!-- <img src="path/to/your/ganesh-puja-image.jpg" alt="Ganesh Puja Celebration"> -->
+                <div class="placeholder-text">
+                    <img src="Ganeshhhh@.avif" alt="ganesh Puja Celebration">
+                </div>
+            </div>
+        </div>
+
+        <!-- Celebration in Cuttack Section -->
+        <div class="content-section celebration-section">
+            <div class="section-icon">🎉</div>
+            <h2>Celebration of Ganesh Puja in Cuttack</h2>
+            <p><b>
+                Ganesh Puja in Cuttack is celebrated with immense devotion and grandeur, marking the birth of Lord Ganesha, the elephant-headed deity known as the remover of obstacles and the god of wisdom and prosperity. The festival usually spans ten days, culminating in the grand immersion ceremony (Ganesh Visarjan) on Anant Chaturdashi. During this period, beautifully crafted idols of Lord Ganesha are installed in homes and public pandals (temporary structures), adorned with flowers, lights, and intricate decorations. Devotees engage in various rituals, including chanting mantras, singing bhajans (devotional songs), and offering sweets like modaks, which are believed to be Lord Ganesha's favorite. The atmosphere is filled with joy, music, and dance as communities come together to celebrate this auspicious occasion.
+            </b></p>
+            
+        </div>
+
+        <!-- Famous Places Section -->
+        <div class="content-section places-section">
+            <div class="section-icon">📍</div>
+            <h2>Famous Ganesh Puja Places in Cuttack</h2>
+            
+            <p>
+                Cuttack hosts some of the most spectacular Ganesh Puja celebrations in Odisha, with numerous locations becoming pilgrimage sites during the festival. These places attract thousands of devotees who come to seek blessings and witness the grandeur of the celebrations.
+            </p>
+            
+            <div class="places-grid">
+                <div class="place-card">
+                    <h4>🛕 1. Choudhury Bazaar</h4>
+                    <p>This is one of the oldest and most iconic hubs for Ganesh Puja in Cuttack. The pandals here are known for their grand size, artistic themes, and intricate decorations made by skilled artisans. During the festival, the entire area turns into a fairground with stalls selling food, toys, and puja items. The vibrant lighting and music draw huge crowds every evening, making it a must-visit spot.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🎨 2. Dolamundai</h4>
+                    <p>Dolamundai is famous for its creativity and thematic pandals. Each year, the local committees compete to design unique decorations — sometimes replicating famous temples, palaces, or mythological scenes. The area also hosts cultural shows, bhajans, and entertainment events, creating a festive environment that continues for days.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🌉 3. College Square</h4>
+                    <p>Located near many educational institutions, College Square is where students play a key role in organizing Ganesh Puja. The pandals here are youthful, vibrant, and often experimental in design. Visitors can also enjoy stage programs, music, and performances organized by student groups, which make this area feel energetic and fresh.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🏘️ 4. Balu Bazaar & Ranihat</h4>
+                    <p>Both Balu Bazaar and Ranihat are known for their traditional approach to Ganesh Puja. The pandals are beautifully decorated but retain a strong devotional atmosphere. People here focus on rituals, devotional singing, and community feasts (bhog distribution), giving you a more spiritual and authentic experience of the festival.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🎉 5. CDA & Other Residential Colonies</h4>
+                    <p>Modern residential colonies like CDA Sectors 6, 7, and 10 also host big Ganesh Puja celebrations. These areas are famous for their family-friendly pandals, children’s activities, and cultural competitions. The decorations here are usually very colorful and creative, giving a contemporary flavor to the traditional festival.</p>
+                </div>
+
+                <div class="place-card">
+                    <h4>🌊 6. Immersion Points – Mahanadi River Ghats (Jobra & Gadagadia)</h4>
+                    <p>The grand finale of Ganesh Puja takes place at the river ghats where the idols are immersed. Jobra Ghat and Gadagadia Ghat on the Mahanadi become packed with processions from across the city. The atmosphere is electric with drums, dancing, and chants of “Ganapati Bappa Morya” as the idols are taken for immersion, creating an unforgettable spectacle.</p>
+                </div>
+            </div>
+
+           
+
+            <h3>🌊 The Grand Immersion Ceremony</h3>
+            <p>
+                The festival culminates with the grand immersion ceremony (Ganesh Visarjan) at the Mahanadi River, where devotees bid farewell to Lord Ganesha with heavy hearts and joyful chants of "Ganpati Bappa Morya, Mangal Murti Morya!" The procession to the river is a spectacular sight with thousands of devotees participating in this emotional yet celebratory farewell.
+            </p>
+
+           
+        </div>
+
+        <div class="footer">
+            <p>🐘 Experience the divine blessings and cultural richness of Ganesh Puja in Cuttack 🐘</p>
+            <div class="ganesh-blessing" style="font-size: 1.2rem; margin-top: 15px;">
+                गणपति बप्पा मोरया, मंगल मूर्ति मोरया!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+
+       
+
+            // Add click animation to sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Add floating elements animation
+            const createFloatingElement = () => {
+                const element = document.createElement('div');
+                element.innerHTML = '🐘';
+                element.style.position = 'fixed';
+                element.style.fontSize = '20px';
+                element.style.zIndex = '1000';
+                element.style.pointerEvents = 'none';
+                element.style.left = Math.random() * window.innerWidth + 'px';
+                element.style.top = window.innerHeight + 'px';
+                element.style.transition = 'all 10s linear';
+                element.style.opacity = '0.7';
+                document.body.appendChild(element);
+
+                setTimeout(() => {
+                    element.style.top = '-50px';
+                    element.style.left = Math.random() * window.innerWidth + 'px';
+                }, 100);
+
+                setTimeout(() => {
+                    document.body.removeChild(element);
+                }, 10000);
+            };
+
+            // Create floating elements periodically
+            setInterval(createFloatingElement, 4000);
+
+            // Add blessing animation on scroll
+            const blessings = document.querySelectorAll('.ganesh-blessing');
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'glow 2s ease-in-out infinite alternate';
+                    }
+                });
+            }, observerOptions);
+
+            blessings.forEach(blessing => {
+                observer.observe(blessing);
+            });
+        ;
+    </script>
+</body>
+</html>
